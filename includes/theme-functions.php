@@ -49,7 +49,7 @@ function alyeska_css() {
 
 	// Register all CSS files
 	wp_register_style( 'themeblvd_alyeska', get_template_directory_uri() . '/assets/css/theme.min.css', $api->get_framework_deps(), $theme_version );
-	wp_register_style( 'themeblvd_alyeska_menu', get_template_directory_uri() . '/assets/css/menus.min.css', array('themeblvd_alyeska'), $theme_version );
+	wp_register_style( 'themeblvd_alyeska_menu', get_template_directory_uri() . '/assets/css/menus.css', array('themeblvd_alyeska'), $theme_version );
 	wp_register_style( 'themeblvd_alyeska_shape', get_template_directory_uri() . '/assets/css/shape/'.themeblvd_get_option( 'body_shape' ).'-'.themeblvd_get_option( 'body_style' ).'.min.css', array('themeblvd_alyeska'), $theme_version );
 	wp_register_style( 'themeblvd_dark', get_template_directory_uri() . '/assets/css/dark.min.css', array('themeblvd_alyeska'), $theme_version );
 	wp_register_style( 'themeblvd_responsive', get_template_directory_uri() . '/assets/css/responsive.min.css', array('themeblvd_alyeska'), $theme_version );
@@ -167,7 +167,7 @@ function alyeska_js() {
 	global $themeblvd_framework_scripts;
 
 	// Theme-specific script
-	wp_enqueue_script( 'themeblvd_theme', get_template_directory_uri() . '/assets/js/alyeska.min.js', $themeblvd_framework_scripts, '3.0.0', true );
+	wp_enqueue_script( 'themeblvd_theme', get_template_directory_uri() . '/assets/js/alyeska.js', $themeblvd_framework_scripts, '3.0.0', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'alyeska_js' );
@@ -415,26 +415,30 @@ if ( !function_exists( 'alyeska_header_menu' ) ) :
  */
 function alyeska_header_menu() {
 
-	$responsive = themeblvd_supports( 'display', 'responsive' );
-	$mobile_nav = themeblvd_get_option( 'mobile_nav' );
+	$responsive = TRUE;
+	$mobile_nav = 'style_1';
+
 
 	do_action( 'themeblvd_header_menu_before' );
 	?>
+	<?php if ( $responsive && 'style_1' == $mobile_nav ) : ?>
+		<div class="menu-trigger-wrapper">
+			<a id="menu-trigger" href="#main-menu" class="btn-navbar">
+				<?php echo apply_filters( 'themeblvd_btn_navbar_text', '<i class="fa fa-bars"></i>' ); ?>
+			</a>
+		</div>
+	<?php endif; ?>
 	<div id="menu-wrapper">
+
 		<?php if ( $responsive && 'style_3' == $mobile_nav ) : ?>
 			<?php echo themeblvd_nav_menu_select( apply_filters( 'themeblvd_responsive_menu_location', 'primary' ) ); ?>
 		<?php endif; ?>
-		<div id="main-top">
-			<div class="main-top-left"></div>
-			<div class="main-top-right"></div>
-			<div class="main-top-middle"></div>
-		</div>
 		<div class="menu-wrapper-inner">
-			<?php if ( $responsive && 'style_1' == $mobile_nav ) : ?>
-				<a href="#main-menu" class="btn-navbar">
-					<?php echo apply_filters( 'themeblvd_btn_navbar_text', '<i class="fa fa-bars"></i>' ); ?>
-				</a>
-			<?php endif; ?>
+			<div id="main-top">
+				<div class="main-top-left"></div>
+				<div class="main-top-right"></div>
+				<div class="main-top-middle"></div>
+			</div>
 			<div id="main-menu">
 				<div id="menu-inner" class="<?php echo themeblvd_get_option( 'menu_shape' ); ?>-menu <?php echo themeblvd_get_option( 'menu_shape' ); ?>-<?php echo themeblvd_get_option( 'menu_color' ); ?>">
 					<div class="menu-left"><!-- --></div>

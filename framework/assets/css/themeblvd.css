@@ -53,15 +53,6 @@
 .tight .grid_tenth_3 {width: 30%;}
 .tight .grid_tenth_7 {width: 70%;}
 
-/* Mobile Devices */
-@media (max-width: 767px) {
-	.column {
-		float: none;
-		margin: 0 0 20px 0;
-		width: auto;
-	}
-}
-
 /* =Sidebar Layouts
 -----------------------------------------------*/
 
@@ -3311,5 +3302,26 @@ button.mfp-arrow {
 	}
 	#breadcrumbs.tb-wpml-breadcrumbs .tb-wpml-flaglist {
 		margin-top: 5px;
+	}
+}
+
+/* Mobile Devices */
+@media (max-width: 767px) {
+	.column {
+		float: none;
+		margin: 0 0 20px 0;
+		width: auto;
+	}
+	.btn-navbar {
+		display: block;
+	}
+	#main-menu {
+		display: none;
+	}
+	#main-menu.open {
+		display: block;
+	}
+	#main-top {
+		display: none;
 	}
 }

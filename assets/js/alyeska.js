@@ -6,7 +6,7 @@ jQuery(document).ready(function($) {
 	// Enable toggle for Main menu on tablets and mobile
 	// ---------------------------------------------------------
 
-	$('.mobile_nav_style_1 .btn-navbar').toggleMenu({'viewport':767});
+	$('#menu-trigger').toggleMenu({'viewport':767});
 
 	// ---------------------------------------------------------
 	// Main Menu Search

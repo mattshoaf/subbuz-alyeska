@@ -1317,10 +1317,22 @@
 		only screen and (min-resolution: 1.5dppx) {
 	.classic-slate .menu-left,
 	.classic-slate .menu-right,
-	.classic-slate .menu-middle,
-	.classic-slate .sf-menu > li > a:hover {
-		background-image: url(../images/layout/menu/menu-classic-slate_2x.png);
-		background-size: 6px 232px;
+	.classic-slate .menu-middle
+	{
+		background: #2c3948;
+		height: inherit;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.sf-menu > li{
+		float: none;
+	}
+	ul.sf-menu-with-fontawesome .sf-sub-indicator.fa {display: none;}
+	#main-menu .sf-menu ul {
+		width: 100% !important;
+		position: relative;
+		display: block !important;
+		border: none;
 	}
 	.classic-slate #search-trigger {
 		background-image: url(../images/layout/menu/search-popup-trigger-classic-slate_2x.png);
@@ -1382,33 +1394,28 @@
 ----------------------------------------------- */
 
 /* Menu Toggle */
-#menu-wrapper .menu-wrapper-inner {
-	position: relative;
+.menu-trigger-wrapper {
+	position: absolute;
+	top: 0;
 }
-#menu-wrapper .btn-navbar {
+.menu-trigger-wrapper .btn-navbar {
 	background-position: 0 -58px;
 	border-style: solid;
 	border-width: 1px;
-	border-bottom-width: 0;
-	-webkit-border-top-left-radius: 3px;
-	-webkit-border-top-right-radius: 3px;
-	-moz-border-radius-topleft: 3px;
-	-moz-border-radius-topright: 3px;
-	border-top-left-radius: 3px;
-	border-top-right-radius: 3px;
+	border-radius: 3px;
 	font-size: 16px;
 	height: 34px; /* Better consistency among different browsers */
 	line-height: 1;
 	outline: none;
 	padding: 8px 12px;
 	position: absolute;
-	top: -49px;
+	top: 10px;
 	left: 10px;
 	text-decoration: none;
 }
 
 /* BLACK */
-.menu_black #menu-wrapper .btn-navbar {
+.menu_black .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-black.png);
 	border-color: #000000;
 	color: #ffffff;
@@ -1418,7 +1425,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_black #menu-wrapper .btn-navbar {
+	.menu_black .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-black_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1428,7 +1435,7 @@
 		background-image: url(../images/layout/menu/menu-flip-black.png);
 	}
 	.mobile_nav_style_1.menu_black #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_black #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_black .menu-trigger-wrapper {
 		background: #222222;
 	}
 	.mobile_nav_style_1.menu_black #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1447,7 +1454,7 @@
 }
 
 /* BLUE */
-.menu_blue #menu-wrapper .btn-navbar {
+.menu_blue .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-blue.png);
 	border-color: #0b4878;
 	color: #ffffff;
@@ -1457,7 +1464,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_blue #menu-wrapper .btn-navbar {
+	.menu_blue .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-blue_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1467,7 +1474,7 @@
 		background-image: url(../images/layout/menu/menu-flip-blue.png);
 	}
 	.mobile_nav_style_1.menu_blue #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_blue #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_blue .menu-trigger-wrapper {
 		background: #0b4382;
 	}
 	.mobile_nav_style_1.menu_blue #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1486,7 +1493,7 @@
 }
 
 /* BROWN */
-.menu_brown #menu-wrapper .btn-navbar {
+.menu_brown .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-brown.png);
 	border-color: #3d2213;
 	color: #ffffff;
@@ -1496,7 +1503,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_brown #menu-wrapper .btn-navbar {
+	.menu_brown .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-brown_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1506,7 +1513,7 @@
 		background-image: url(../images/layout/menu/menu-flip-brown.png);
 	}
 	.mobile_nav_style_1.menu_brown #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_brown #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_brown .menu-trigger-wrapper {
 		background: #482f21;
 	}
 	.mobile_nav_style_1.menu_brown #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1525,7 +1532,7 @@
 }
 
 /* DARK PURPLE */
-.menu_dark_purple #menu-wrapper .btn-navbar {
+.menu_dark_purple .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-dark_purple.png);
 	border-color: #1e0635;
 	color: #ffffff;
@@ -1535,7 +1542,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_dark_purple #menu-wrapper .btn-navbar {
+	.menu_dark_purple .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-dark_purple_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1545,7 +1552,7 @@
 		background-image: url(../images/layout/menu/menu-flip-dark_purple.png);
 	}
 	.mobile_nav_style_1.menu_dark_purple #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_dark_purple #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_dark_purple .menu-trigger-wrapper {
 		background: #250745;
 	}
 	.mobile_nav_style_1.menu_dark_purple #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1564,7 +1571,7 @@
 }
 
 /* DARK */
-.menu_dark #menu-wrapper .btn-navbar {
+.menu_dark .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-dark.png);
 	border-color: #333333;
 	color: #ffffff;
@@ -1574,7 +1581,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_dark #menu-wrapper .btn-navbar {
+	.menu_dark .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-dark_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1584,7 +1591,7 @@
 		background-image: url(../images/layout/menu/menu-flip-dark.png);
 	}
 	.mobile_nav_style_1.menu_dark #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_dark #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_dark .menu-trigger-wrapper {
 		background: #3a3a3a;
 	}
 	.mobile_nav_style_1.menu_dark #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1603,7 +1610,7 @@
 }
 
 /* GREEN */
-.menu_green #menu-wrapper .btn-navbar {
+.menu_green .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-green.png);
 	border-color: #366208;
 	color: #ffffff;
@@ -1613,7 +1620,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_green #menu-wrapper .btn-navbar {
+	.menu_green .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-green_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1623,7 +1630,7 @@
 		background-image: url(../images/layout/menu/menu-flip-green.png);
 	}
 	.mobile_nav_style_1.menu_green #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_green #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_green .menu-trigger-wrapper {
 		background: #294b06;
 	}
 	.mobile_nav_style_1.menu_green #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1642,7 +1649,7 @@
 }
 
 /* LIGHT BLUE */
-.menu_light_blue #menu-wrapper .btn-navbar {
+.menu_light_blue .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-light_blue.png);
 	border-color: #3f6e8c;
 	color: #ffffff;
@@ -1652,7 +1659,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_light_blue #menu-wrapper .btn-navbar {
+	.menu_light_blue .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-light_blue_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1662,7 +1669,7 @@
 		background-image: url(../images/layout/menu/menu-flip-light_blue.png);
 	}
 	.mobile_nav_style_1.menu_light_blue #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_light_blue #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_light_blue .menu-trigger-wrapper {
 		background: #357eac;
 	}
 	.mobile_nav_style_1.menu_light_blue #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1681,7 +1688,7 @@
 }
 
 /* LIGHT */
-.menu_light #menu-wrapper .btn-navbar {
+.menu_light .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-light.png);
 	border-color: #ffffff;
 	color: #666666;
@@ -1691,7 +1698,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_light #menu-wrapper .btn-navbar {
+	.menu_light .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-light_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1701,7 +1708,7 @@
 		background-image: url(../images/layout/menu/menu-flip-light.png);
 	}
 	.mobile_nav_style_1.menu_light #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_light #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_light .menu-trigger-wrapper {
 		background: #f5f5f5;
 	}
 	.mobile_nav_style_1.menu_light #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1720,7 +1727,7 @@
 }
 
 /* NAVY */
-.menu_navy #menu-wrapper .btn-navbar {
+.menu_navy .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-navy.png);
 	border-color: #030d2b;
 	color: #ffffff;
@@ -1730,7 +1737,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_navy #menu-wrapper .btn-navbar {
+	.menu_navy .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-navy_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1740,7 +1747,7 @@
 		background-image: url(../images/layout/menu/menu-flip-navy.png);
 	}
 	.mobile_nav_style_1.menu_navy #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_navy #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_navy .menu-trigger-wrapper {
 		background: #051649;
 	}
 	.mobile_nav_style_1.menu_navy #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1759,7 +1766,7 @@
 }
 
 /* ORANGE */
-.menu_orange #menu-wrapper .btn-navbar {
+.menu_orange .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-orange.png);
 	border-color: #60230b;
 	color: #ffffff;
@@ -1769,7 +1776,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_orange #menu-wrapper .btn-navbar {
+	.menu_orange .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-orange_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1779,7 +1786,7 @@
 		background-image: url(../images/layout/menu/menu-flip-orange.png);
 	}
 	.mobile_nav_style_1.menu_orange #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_orange #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_orange .menu-trigger-wrapper {
 		background: #883413;
 	}
 	.mobile_nav_style_1.menu_orange #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1798,7 +1805,7 @@
 }
 
 /* PINK */
-.menu_pink #menu-wrapper .btn-navbar {
+.menu_pink .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-pink.png);
 	border-color: #47062f;
 	color: #ffffff;
@@ -1808,7 +1815,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_pink #menu-wrapper .btn-navbar {
+	.menu_pink .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-pink_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1818,7 +1825,7 @@
 		background-image: url(../images/layout/menu/menu-flip-pink.png);
 	}
 	.mobile_nav_style_1.menu_pink #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_pink #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_pink .menu-trigger-wrapper {
 		background: #a10f6c;
 	}
 	.mobile_nav_style_1.menu_pink #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1837,7 +1844,7 @@
 }
 
 /* PURPLE */
-.menu_purple #menu-wrapper .btn-navbar {
+.menu_purple .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-purple.png);
 	border-color: #4c3c53;
 	color: #ffffff;
@@ -1847,7 +1854,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_purple #menu-wrapper .btn-navbar {
+	.menu_purple .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-purple_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1857,7 +1864,7 @@
 		background-image: url(../images/layout/menu/menu-flip-purple.png);
 	}
 	.mobile_nav_style_1.menu_purple #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_purple #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_purple .menu-trigger-wrapper {
 		background: #8c6d9a;
 	}
 	.mobile_nav_style_1.menu_purple #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1876,7 +1883,7 @@
 }
 
 /* RED */
-.menu_red #menu-wrapper .btn-navbar {
+.menu_red .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-red.png);
 	border-color: #240404;
 	color: #ffffff;
@@ -1886,7 +1893,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_red #menu-wrapper .btn-navbar {
+	.menu_red .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-red_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1896,7 +1903,7 @@
 		background-image: url(../images/layout/menu/menu-flip-red.png);
 	}
 	.mobile_nav_style_1.menu_red #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_red #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_red .menu-trigger-wrapper {
 		background: #7c0e0e;
 	}
 	.mobile_nav_style_1.menu_red #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1915,7 +1922,7 @@
 }
 
 /* SLATE */
-.menu_slate #menu-wrapper .btn-navbar {
+.menu_slate .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-slate.png);
 	border-color: #0f1114;
 	color: #ffffff;
@@ -1925,7 +1932,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_slate #menu-wrapper .btn-navbar {
+	.menu_slate .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-slate_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1935,7 +1942,7 @@
 		background-image: url(../images/layout/menu/menu-flip-slate.png);
 	}
 	.mobile_nav_style_1.menu_slate #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_slate #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_slate .menu-trigger-wrapper {
 		background: #3b444f;
 	}
 	.mobile_nav_style_1.menu_slate #main-menu #menu-inner .sf-menu > li > a:hover {
@@ -1954,7 +1961,7 @@
 }
 
 /* TEAL */
-.menu_teal #menu-wrapper .btn-navbar {
+.menu_teal .menu-trigger-wrapper .btn-navbar {
 	background-image: url(../images/layout/menu/menu-classic-teal.png);
 	border-color: #153f3d;
 	color: #ffffff;
@@ -1964,7 +1971,7 @@
 		only screen and (-o-min-device-pixel-ratio: 1.5),
 		only screen and (min-device-pixel-ratio: 1.5),
 		only screen and (min-resolution: 1.5dppx) {
-	.menu_teal #menu-wrapper .btn-navbar {
+	.menu_teal .menu-trigger-wrapper .btn-navbar {
 		background-image: url(../images/layout/menu/menu-classic-teal_2x.png);
 		background-size: 6px 232px;
 	}
@@ -1974,7 +1981,7 @@
 		background-image: url(../images/layout/menu/menu-flip-teal.png);
 	}
 	.mobile_nav_style_1.menu_teal #main-menu,
-	.mobile_nav_style_1.layout_stretch.menu_teal #menu-wrapper {
+	.mobile_nav_style_1.layout_stretch.menu_teal .menu-trigger-wrapper {
 		background: #1c4e4b;
 	}
 	.mobile_nav_style_1.menu_teal #main-menu #menu-inner .sf-menu > li > a:hover {
